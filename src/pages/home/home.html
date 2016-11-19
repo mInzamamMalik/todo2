@@ -1,16 +1,30 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Welcome to Ionic 2 Todo App!</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic 2 Todo App!</h2>
+  <!--<h2>Welcome to Ionic 2 Todo App!</h2>-->
 
-  <ul>
-    <li class="text" *ngFor="let item of items | async">
-      {{item.$value}}
-    </li>
-  </ul> 
+  <!--<ul>-->
+    <!--<li class="text" *ngFor="let item of items | async">-->
+      <!--{{item.$value}}-->
+    <!--</li>-->
+  <!--</ul> -->
   
+<ion-list>
+  <ion-item>
+    <ion-label floating>ToDo Here:</ion-label>
+    <ion-input type="text" [(ngModel)]="newTodo"></ion-input>
+  </ion-item>
+</ion-list>
+<button ion-button full (click)="addTodo(newTodo)" (click)="newTodo = '' ">Add ToDo</button>
+
+<ion-list no-lines>
+  <ion-item *ngFor="let i = index; let item of items | async">
+    <ion-label>{{item.$value}}</ion-label>
+    <ion-checkbox color="dark" checked="true"></ion-checkbox>
+  </ion-item>
+</ion-list>
 </ion-content>

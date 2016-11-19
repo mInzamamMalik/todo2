@@ -9,9 +9,16 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
   items: FirebaseListObservable<any[]>;
+  newTodo: String;
 
   constructor(public navCtrl: NavController, af: AngularFire) {
     this.items = af.database.list('/items');
   }  
+
+  addTodo = (item) => {
+    if (item) {
+      this.items.push(item);
+    }
+  }
 
 }
