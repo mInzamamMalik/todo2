@@ -21,4 +21,8 @@ export class HomePage {
     }
   }
 
+  deleteTodo = (item)=>{
+    this.items.remove(item);
+  }
+
 }
