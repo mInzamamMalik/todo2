@@ -13,16 +13,25 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, af: AngularFire) {
     this.items = af.database.list('/items');
-  }  
+  }
 
   addTodo = (item) => {
     if (item) {
-      this.items.push(item);
+      this.items.push({
+        "text": item,
+        "isDone": false
+      });
     }
   }
 
-  deleteTodo = (item)=>{
-    this.items.remove(item);
+  deleteTodo = (item) => {
+    if (item.isDone) {
+      this.items.remove(item);
+    }
+  }
+
+  updateTodo = (key, isDone) => {
+    this.items.update(key, { isDone: isDone });
   }
 
 }
