@@ -14,7 +14,9 @@ export class LoginPage {
 
   }
   loginButton() {
-    console.log("Login Working");
+    
+  }
+  signupButton() {    
     this.navCtrl.push(SignupPage);
   }
 

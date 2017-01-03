@@ -10,6 +10,9 @@ export class SignupPage {
   constructor(public navCtrl: NavController) {
 
   }
+  signupButton() {
+
+  }
   backButton() {
     console.log("Login Working");
     this.navCtrl.pop();
