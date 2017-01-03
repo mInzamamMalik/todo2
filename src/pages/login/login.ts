@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { SignupPage } from '../signup/signup';
 
 @Component({
   selector: 'page-login',
@@ -12,9 +13,9 @@ export class LoginPage {
   constructor(public navCtrl: NavController) {
 
   }
-  loginButton(){
+  loginButton() {
     console.log("Login Working");
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.push(SignupPage);
   }
 
 }
