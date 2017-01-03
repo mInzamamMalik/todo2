@@ -11,12 +11,11 @@ import { SignupPage } from '../signup/signup';
 export class LoginPage {
 
   constructor(public navCtrl: NavController) {
-
   }
   loginButton() {
-    
+    this.navCtrl.push(TabsPage);
   }
-  signupButton() {    
+  signupButton() {
     this.navCtrl.push(SignupPage);
   }
 
