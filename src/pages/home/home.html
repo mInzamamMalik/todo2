@@ -28,14 +28,14 @@
 
       <ion-item-options side="right">
 
-        <button ion-button (click)="deleteTodo(item)" color="danger">
+        <button *ngIf="item.isDone" ion-button (click)="deleteTodo(item)" color="danger">
           <ion-icon name="trash"></ion-icon>
         </button>
 
       </ion-item-options>
 
     </ion-item-sliding>
-    <ion-item-divider color="light">slide item left to delete</ion-item-divider>
+    <ion-item-divider color="light">slide item left to delete archived todo</ion-item-divider>
 
   </ion-list>
       <button myitem (click)='logoutButton();'>Log Out</button>

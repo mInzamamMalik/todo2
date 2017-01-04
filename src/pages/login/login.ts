@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 import { NavController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { SignupPage } from '../signup/signup';
 
 import * as firebase from 'firebase'
 
@@ -30,6 +31,9 @@ export class LoginPage {
       provider: AuthProviders.Facebook,
       method: AuthMethods.Popup,
     });
+  }
+  signupButton() {
+    this.navCtrl.push(SignupPage);
   }
 
 }

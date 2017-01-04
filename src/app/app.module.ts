@@ -10,6 +10,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
 
 
 // Must export the config
@@ -33,7 +34,8 @@ export const FirebaseAuthConfig = {
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    SignupPage
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig , FirebaseAuthConfig),
@@ -47,7 +49,8 @@ export const FirebaseAuthConfig = {
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    SignupPage
   ],
   providers: []
 })
