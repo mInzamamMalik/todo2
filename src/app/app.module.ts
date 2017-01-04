@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule ,FIREBASE_PROVIDERS, defaultFirebase,
+  AngularFire, firebaseAuthConfig, AuthProviders,
+  AuthMethods} from 'angularfire2';
 
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
@@ -19,6 +21,11 @@ export const firebaseConfig = {
   messagingSenderId: "534320814263"
 };
 
+export const FirebaseAuthConfig = {
+  provider: AuthProviders.Google,
+  method: AuthMethods.Redirect
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +36,8 @@ export const firebaseConfig = {
     LoginPage
   ],
   imports: [
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig , FirebaseAuthConfig),
+  
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
